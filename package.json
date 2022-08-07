@@ -1,0 +1,23 @@
+{
+  "name": "spa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start:client": "parcel frontend/index.html",
+    "start:server": "nodemon ./server.js",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "build": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19",
+    "parcel-bundler": "^1.12.5"
+  }
+}
