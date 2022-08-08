@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Language" content="en" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Accesso area riservata - Nome del Comune</title>
+    <title>Pagamenti - Nome del Comune</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
@@ -290,7 +290,7 @@
                         </li>
                         <li class="nav-item">
                           <a
-                            class="nav-link"
+                            class="nav-link active"
                             href="#"
                             data-element="all-services"
                           >
@@ -399,109 +399,228 @@
     </header>
     <main>
       <div class="container" id="main-container">
-        <div class="row">
-          <div class="col-12 col-lg-10 offset-lg-1">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
             <div class="cmp-breadcrumbs" role="navigation">
               <nav class="breadcrumb-container">
                 <ol class="breadcrumb p-0" data-element="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item">
+                    <a href="#">Home</a><span class="separator">/</span>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#">Servizi</a></li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    <span class="separator">/</span>Accesso
+                    <span class="separator">/</span>Pagamenti
                   </li>
                 </ol>
               </nav>
             </div>
             <div class="cmp-heading pb-3 pb-lg-4">
-              <h1 class="title-xxxlarge">Accedi</h1>
+              <h1 class="title-xxxlarge">Pagamento multa</h1>
 
               <p class="subtitle-small">
-                Per accedere al sito e ai suoi servizi, utilizza una delle
-                seguenti modalità.
+                Inserisci le informazioni necessarie per il pagamento della
+                multa.<span class="d-flex d-lg-block mb-lg-2"
+                  >Potrai ricontrollare tutti i dati nel riepilogo, prima di
+                  effettuare il pagamento.</span
+                >
+              </p>
+
+              <p class="subtitle-small mb-8">
+                Hai bisogno di assistenza?
+                <a href="" class="title-small-semi-bold t-primary"
+                  >Contattaci</a
+                >
               </p>
             </div>
           </div>
+
+          <div class="col-12">
+            <div class="cmp-info-progress d-flex" data-progress="">
+              <!-- Desktop -->
+              <div
+                class="info-progress-wrapper d-none d-lg-flex w-100 px-3 flex-column justify-content-end completed"
+              >
+                <div
+                  class="info-progress-body d-flex justify-content-between align-self-end align-items-end w-100 py-3"
+                >
+                  <span class="d-block h-100 title-medium text-uppercase"
+                    >Informativa sulla privacy</span
+                  >
+
+                  <svg
+                    class="d-block icon icon-primary icon-sm"
+                    aria-hidden="true"
+                  >
+                    <use
+                      href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-check"
+                    ></use>
+                  </svg>
+                </div>
+              </div>
+              <!-- Desktop -->
+              <div
+                class="info-progress-wrapper d-none d-lg-flex w-100 px-3 flex-column justify-content-end completed"
+              >
+                <div
+                  class="info-progress-body d-flex justify-content-between align-self-end align-items-end w-100 py-3"
+                >
+                  <span class="d-block h-100 title-medium text-uppercase"
+                    >Dati generali</span
+                  >
+
+                  <svg
+                    class="d-block icon icon-primary icon-sm"
+                    aria-hidden="true"
+                  >
+                    <use
+                      href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-check"
+                    ></use>
+                  </svg>
+                </div>
+              </div>
+              <!-- Desktop -->
+              <div
+                class="info-progress-wrapper d-none d-lg-flex w-100 px-3 flex-column justify-content-end step-active"
+              >
+                <div
+                  class="info-progress-body d-flex justify-content-between align-self-end align-items-end w-100 py-3"
+                >
+                  <span class="d-block h-100 title-medium text-uppercase"
+                    >Dati specifici del servizio</span
+                  >
+                </div>
+              </div>
+              <!-- Desktop -->
+              <div
+                class="info-progress-wrapper d-none d-lg-flex w-100 px-3 flex-column justify-content-end"
+              >
+                <div
+                  class="info-progress-body d-flex justify-content-between align-self-end align-items-end w-100 py-3"
+                >
+                  <span class="d-block h-100 title-medium text-uppercase"
+                    >Pagamento</span
+                  >
+                </div>
+              </div>
+
+              <!-- Mobile -->
+              <div class="iscrizioni-header d-lg-none w-100">
+                <h4
+                  class="step-title d-flex align-items-center justify-content-between drop-shadow"
+                >
+                  <span class="d-block d-lg-inline">
+                    Dati specifici del servizio
+                  </span>
+                  <span class="step">3/4</span>
+                </h4>
+              </div>
+            </div>
+          </div>
         </div>
-        <hr class="d-none d-lg-block mt-0 mb-4" />
-        <div class="row">
-          <div class="col-12 col-lg-8 offset-lg-2">
-            <div class="cmp-text-button mt-3">
-              <h2 class="title-xxlarge mb-0">SPID</h2>
-              <div class="text-wrapper">
-                <p class="subtitle-small mb-3">
-                  Accedi con SPID, il sistema Pubblico di Identità Digitale.
-                </p>
-              </div>
-              <div class="button-wrapper mb-2">
-                <a
-                  href="pagamenti-dovuti-multa-acconsentire-trattamento-dati-inseriti.html"
+
+        <div class="steppers-content" aria-live="polite">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+              <p class="text-paragraph-small mt-3 mb-40 mb-lg-25">
+                I campi contraddistinti dal simbolo asterisco sono obbligatori
+              </p>
+
+              <div class="cmp-card mb-0">
+                <div
+                  class="card has-bkg-grey shadow-sm p-4 pt-lg-30 pb-lg-30 pl-lg-30 pr-lg-30"
                 >
-                  <button type="button" class="btn btn-icon btn-re square">
-                    <img
-                      src="../assets/images/spid.svg"
-                      alt="Entra con SPID"
-                      class="me-2"
-                    />
-                    <span class="">Entra con SPID</span>
+                  <div class="card-header border-0 p-0 mb-lg-30 m-0">
+                    <div class="d-flex">
+                      <h2 class="title-xxlarge mb-0 icon-required" id="">
+                        Codice avviso
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <p class="subtitle-small pb-4 mb-0">
+                      Inserisci il codice di 18 cifre presente nell’avviso della
+                      multa.
+                      <a href="#" class="t-primary d-block d-lg-inline"
+                        >Dove trovare il codice</a
+                      >
+                    </p>
+                    <div class="bg-white">
+                      <div class="form-group cmp-input mb-0 mt-0">
+                        <label class="cmp-input__label" for="code"
+                          >Codice avviso*</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="code"
+                          name="code"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cmp-nav-steps">
+                <nav class="steppers-nav">
+                  <button
+                    type="button"
+                    class="btn btn-sm steppers-btn-prev p-0"
+                  >
+                    <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                      <use
+                        href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-left"
+                      ></use>
+                    </svg>
+                    <span class="text-button-sm t-primary">Indietro</span>
                   </button>
-                </a>
-              </div>
 
-              <a class="simple-link" href="#"
-                >Come attivare SPID
-                <span class="visually-hidden">Come attivare SPID</span></a
-              >
-            </div>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-none d-lg-block saveBtn"
+                  >
+                    <span class="text-button-sm t-primary"
+                      >Salva Richiesta</span
+                    >
+                  </button>
 
-            <div class="cmp-text-button">
-              <h2 class="title-xxlarge mb-0">CIE</h2>
-              <div class="text-wrapper">
-                <p class="subtitle-small mb-3">
-                  Accedi con la tua Carta d’Identità Elettronica.
-                </p>
-              </div>
-              <div class="button-wrapper mb-2">
-                <button type="button" class="btn btn-icon btn-re square">
-                  <img
-                    src="../assets/images/cie.svg"
-                    alt="Entra con CIE"
-                    class="me-2"
-                  />
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-block d-lg-none saveBtn center"
+                  >
+                    <span class="text-button-sm t-primary">Salva</span>
+                  </button>
 
-                  <span class="">Entra con CIE</span>
-                </button>
-              </div>
-
-              <a class="simple-link" href="#"
-                >Come richiedere CIE
-                <span class="visually-hidden">Come richiedere CIE</span></a
-              >
-            </div>
-
-            <div class="cmp-text-button">
-              <h2 class="title-xxlarge mb-0">Altre utenze</h2>
-              <div class="text-wrapper">
-                <p class="subtitle-small mb-3">
-                  In alternativa puoi utilizzare le seguenti modalità.
-                </p>
-              </div>
-              <div class="button-wrapper d-md-flex">
-                <button
-                  type="button"
-                  class="btn btn-outline-primary btn-re pr-md-4 bg-white"
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-sm steppers-btn-confirm"
+                    data-bs-validate="validate"
+                  >
+                    <span class="text-button-sm">Avanti</span>
+                    <svg class="icon icon-white icon-sm" aria-hidden="true">
+                      <use
+                        href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"
+                      ></use>
+                    </svg>
+                  </button>
+                </nav>
+                <div
+                  id="alert-message"
+                  class="alert alert-success cmp-disclaimer rounded d-none"
+                  role="alert"
                 >
-                  <span class="">Accedi con ID azienda</span>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-outline-primary btn-re bg-white"
-                >
-                  <span class="">Accedi come dipendente</span>
-                </button>
+                  <span
+                    class="d-inline-block text-uppercase cmp-disclaimer__message"
+                    >Richiesta salvata con successo</span
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="bg-grey-card shadow-contacts">
         <div class="container">
           <div class="row">
@@ -574,7 +693,107 @@
           </div>
         </div>
       </div>
+
+      <div class="cmp-modal">
+        <div
+          class="modal fade"
+          tabindex="-1"
+          role="dialog"
+          id="modal-save-1"
+          aria-labelledby="modal-save-1-modal-title"
+        >
+          <div class="modal-dialog modal-dialog-centered small" role="document">
+            <div class="modal-content modal-dimensions">
+              <div class="cmp-modal__header modal-header pb-0">
+                <button
+                  class="btn-close"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="Chiudi finestra modale"
+                ></button>
+                <h2
+                  class="cmp-modal__header-title title-mini"
+                  id="modal-save-1-modal-title"
+                >
+                  Salva i dati in area personale
+                </h2>
+                <p class="cmp-modal__header-info header-font">
+                  Vuoi salvare le informazioni anche nella tua area personale?
+                  Potrai usarle anche in altre occasioni.
+                </p>
+              </div>
+              <div class="modal-body"></div>
+              <div class="modal-footer pb-70 pt-0">
+                <button
+                  class="btn btn-primary w-100 mx-0 fw-bold mb-4"
+                  type="submit"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-save-2"
+                  form=""
+                >
+                  Salva nella mia area personale
+                </button>
+                <button
+                  class="btn btn-outline-primary w-100 mx-0"
+                  data-bs-dismiss="modal fw-bold"
+                  type="button"
+                >
+                  Salva solo per questa pratica
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-modal">
+        <div
+          class="modal fade"
+          tabindex="-1"
+          role="dialog"
+          id="modal-save-2"
+          aria-labelledby="modal-save-2-modal-title"
+        >
+          <div class="modal-dialog modal-dialog-centered small" role="document">
+            <div class="modal-content modal-dimensions">
+              <div class="cmp-modal__header modal-header pb-0">
+                <button
+                  class="btn-close"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="Chiudi finestra modale"
+                ></button>
+                <h2
+                  class="cmp-modal__header-title title-mini"
+                  id="modal-save-2-modal-title"
+                >
+                  Salva i dati in area personale
+                </h2>
+                <p class="cmp-modal__header-info header-font">
+                  Vuoi salvare le informazioni anche nella tua area personale?
+                  Potrai riutilizzarle in futuro per altre pratiche.
+                </p>
+              </div>
+              <div class="modal-body">
+                <div
+                  class="d-flex justify-content-center align-items-center pb-70"
+                >
+                  <svg class="icon icon-success icon-md">
+                    <use
+                      href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-check-circle"
+                    ></use>
+                  </svg>
+                  <span class="cmp-modal__success-message"
+                    >Salvataggio effettuato</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
     <div
       class="modal fade search-modal"
       id="search-modal"
@@ -949,5 +1168,6 @@
     </script>
     <script src="../assets/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js"></script>
     <script src="../assets/script/scripts.js"></script>
+    <script src="../assets/script/pages/specific.js"></script>
   </body>
 </html>

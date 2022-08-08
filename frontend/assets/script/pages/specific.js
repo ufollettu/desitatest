@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-  console.log("general data page loaded");
+  console.log("specific data page loaded");
   const state = {
     requestSaved: false,
   };
@@ -14,13 +14,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   closeModal.addEventListener("click", (event) => {
-    window.location.href = window.location.href.replace("general", "specific");
+    console.log("close modal");
+    window.location.href =
+      "/pagamenti-dovuti-multa-inserire-dati-specifici.html";
   });
   closeModalSaved.addEventListener("click", (event) => {
-    window.location.href = window.location.href.replace("general", "specific");
+    console.log("close modal");
+    window.location.href =
+      "/pagamenti-dovuti-multa-inserire-dati-specifici.html";
   });
 
   modalSave2.addEventListener("click", (event) => {
-    window.location.href = window.location.href.replace("general", "specific");
+    console.log("modalSave2");
+    window.location.href =
+      "/pagamenti-dovuti-multa-inserire-dati-specifici.html";
   });
 });
