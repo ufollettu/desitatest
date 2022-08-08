@@ -1,26 +1,13 @@
 {
-  "name": "spa",
+  "name": "test",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "start:client": "parcel frontend/index.html",
-    "start:server": "nodemon ./server.js",
-    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
-    "clean": "rimraf dist",
-    "build": "npm run clean && parcel build frontend/index.html"
-  },
   "keywords": [],
+  "scripts": {
+    "zip": "jszip frontend -o dist.zip"
+  },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.17.1",
-    "routes.js": "^0.0.1"
-  },
   "devDependencies": {
-    "concurrently": "^7.3.0",
-    "nodemon": "^2.0.19",
-    "parcel-bundler": "^1.12.5",
-    "rimraf": "^3.0.2"
+    "jszip-cli": "^1.4.24"
   }
 }
