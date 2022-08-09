@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "keywords": [],
   "scripts": {
-    "zip": "jszip frontend -o dist.zip"
+    "zip": "rm -f dist.zip && jszip frontend -o dist.zip",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "jszip-cli": "^1.4.24"
+    "jszip-cli": "^1.4.24",
+    "vite": "^3.0.4"
   }
 }
