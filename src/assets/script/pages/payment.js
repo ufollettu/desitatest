@@ -3,12 +3,39 @@ import { store } from "./store";
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("payment data page loaded");
 
+  const localCode = store.get("code");
   const localDate = store.get("date");
   const localAmount = store.get("amount");
+
+  const paymentCode = document.getElementById("payment-code");
   const paymentInfo = document.getElementById("payment-info");
+  const paymentDate = document.getElementById("payment-date");
   const paymentAmount = document.getElementById("payment-amount");
 
   const confirmDataBtn = document.getElementById("confirm-data-btn");
+
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, "0");
+  }
+
+  function formatDate(date) {
+    return [
+      padTo2Digits(date.getDate()),
+      padTo2Digits(date.getMonth() + 1),
+      date.getFullYear(),
+    ].join("/");
+  }
+
+  if (localCode) {
+    paymentCode.innerHTML = localCode
+      .replace(/[^\dA-Z]/g, "")
+      .replace(/(.{4})/g, "$1 ")
+      .trim();
+  }
+
+  if (localDate) {
+    paymentDate.innerHTML = formatDate(new Date(localDate));
+  }
 
   if (localAmount) {
     const today = new Date();
