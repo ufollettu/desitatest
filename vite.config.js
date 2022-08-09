@@ -1,10 +1,16 @@
 // vite.config.js
+import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: "public",
+  root: process.env.NODE_ENV === "production" ? "" : "public",
   build: {
-    outDir: "../dist",
+    outDir: "dist",
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "public/index.html"),
+      },
+    },
   },
 });

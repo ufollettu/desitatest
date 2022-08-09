@@ -6,7 +6,7 @@
     "zip": "rm -f dist.zip && jszip src -o dist.zip",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "postbuild": "cd dist && rm -rf public"
   },
   "author": "",
   "license": "MIT",
