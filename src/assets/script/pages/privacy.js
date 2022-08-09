@@ -12,4 +12,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
       forwardButton.classList.add("disabled");
     }
   });
+
+  forwardButton.addEventListener("click", (event) => {
+    window.location.href = window.location.href.replace("privacy", "general");
+  });
 });
