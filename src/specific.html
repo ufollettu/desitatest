@@ -522,8 +522,9 @@
           <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
               <!-- show when error -->
-              <!-- <div
-                class="cmp-warning-box border-start border-warning border-2 mb-5"
+              <div
+                id="error-summary"
+                class="cmp-warning-box border-start border-warning border-2 mb-5 d-none"
               >
                 <div class="warning-box-icon">
                   <svg class="icon icon-warning" aria-hidden="true">
@@ -543,13 +544,13 @@
                 <ul>
                   <li>
                     <a
-                      href="#warning-code"
+                      id="error-summary-link"
+                      href="#"
                       class="t-primary subtitle-small pb-1 pt-1"
-                      >Codice Avviso</a
-                    >
+                    ></a>
                   </li>
                 </ul>
-              </div> -->
+              </div>
 
               <p class="text-paragraph-small mt-3 mb-40 mb-lg-25">
                 I campi contraddistinti dal simbolo asterisco sono obbligatori
@@ -580,7 +581,8 @@
                         >Codice avviso*</label
                       >
                       <input
-                        type="text"
+                        type="number"
+                        maxlenght="18"
                         class="form-control"
                         id="code"
                         name="code"
@@ -590,12 +592,24 @@
                     <!-- show when error -->
                     <div
                       class="form-feedback just-validate-error-label d-none"
-                      id="code-error-0"
+                      id="code-error"
                     >
                       Questo campo è richiesto
                     </div>
+                    <!-- loading spinner mobile -->
+                    <div
+                      id="spinner"
+                      class="d-flex justify-content-center align-items-center mt-4 d-none"
+                    >
+                      <div
+                        class="progress-spinner progress-spinner-double size-sm progress-spinner-active"
+                      >
+                        <div class="progress-spinner-inner"></div>
+                        <div class="progress-spinner-inner"></div>
+                        <span class="visually-hidden">Caricamento...</span>
+                      </div>
+                    </div>
                     <!-- code data div, show when code is added -->
-                    <!-- no loading state is provided -->
                     <div id="fine-data" class="d-none">
                       <div
                         class="cmp-info-summary bg-white p-3 p-lg-4 mt-4 mt-lg-30 mb-4 mb-lg-30"
@@ -699,6 +713,14 @@
                               name="dateStandard"
                               required
                             />
+                            <!-- show when error -->
+
+                            <div
+                              class="form-feedback just-validate-error-label d-none"
+                              id="date-error"
+                            >
+                              Questo campo è richiesto
+                            </div>
                           </div>
                         </div>
                         <!-- hide when data is set -->
@@ -751,11 +773,10 @@
                     <span class="text-button-sm t-primary">Salva</span>
                   </button>
                   <button
-                    id="submit-forward"
+                    id="forward-button"
                     type="submit"
-                    class="btn btn-primary btn-sm steppers-btn-confirm disabled"
+                    class="btn btn-primary btn-sm steppers-btn-confirm"
                     data-bs-validate="validate"
-                    disabled
                   >
                     <span class="text-button-sm">Avanti</span>
                     <svg class="icon icon-white icon-sm" aria-hidden="true">

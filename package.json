@@ -13,5 +13,8 @@
   "devDependencies": {
     "jszip-cli": "^1.4.24",
     "vite": "^3.0.4"
+  },
+  "dependencies": {
+    "bootstrap-italia": "^2.0.2"
   }
 }

@@ -2,38 +2,118 @@ window.addEventListener("DOMContentLoaded", (event) => {
   console.log("specific data page loaded");
 
   const codeInput = document.getElementById("code");
-  const forwardButton = document.getElementById("submit-forward");
+  const codeError = document.getElementById("code-error");
+
+  const dateInput = document.getElementById("date-1");
+  const dateError = document.getElementById("date-error");
+
+  const forwardButton = document.getElementById("forward-button");
+
   const fineData = document.getElementById("fine-data");
   const fineAmount = document.getElementById("fine-amount");
   const fineInfo = document.getElementById("fine-info");
-  const dateInput = document.getElementById("date-1");
+
+  const errorSummary = document.getElementById("error-summary");
+  const errorSummaryLink = document.getElementById("error-summary-link");
+
+  const spinner = document.getElementById("spinner");
+
+  const mockRequest = () => {
+    spinner.classList.remove("d-none");
+    dateInput.classList.remove("is-invalid");
+    dateError.classList.add("d-none");
+    errorSummary.classList.add("d-none");
+    codeInput.disabled = true;
+    setTimeout(() => {
+      spinner.classList.add("d-none");
+      fineData.classList.remove("d-none");
+      codeInput.disabled = false;
+    }, 1000);
+  };
+
+  forwardButton.addEventListener("click", (event) => {
+    const isEmptyCode = codeInput.value.length === 0;
+    const isLengthCode = codeInput.value.length === 18;
+    const isEmptyDate = dateInput.value.length === 0;
+
+    if (isEmptyCode) {
+      codeInput.classList.add("is-invalid");
+      codeError.classList.remove("d-none");
+      codeError.innerHTML = "Questo campo è richiesto";
+      errorSummaryLink.innerHTML = "Codice Avviso";
+      errorSummaryLink.href = "#code";
+      errorSummary.classList.remove("d-none");
+    }
+
+    if (!isEmptyCode && !isLengthCode) {
+      codeInput.classList.add("is-invalid");
+      codeError.classList.remove("d-none");
+      codeError.innerHTML = "Questo campo deve essere lungo 18 caratteri";
+      errorSummary.classList.remove("d-none");
+    }
+
+    if (isEmptyDate) {
+      dateInput.classList.add("is-invalid");
+      dateError.classList.remove("d-none");
+      errorSummaryLink.innerHTML = "Data di ricevuta avviso";
+      errorSummaryLink.href = "#date-1";
+      errorSummary.classList.remove("d-none");
+    }
+    if (!isEmptyCode && isLengthCode && !isEmptyDate) {
+      window.location.href = window.location.href.replace(
+        "specific",
+        "payment"
+      );
+    }
+  });
 
   codeInput.addEventListener("keyup", (event) => {
     const value = event.target.value;
     if (value.length === 18) {
-      fineData.classList.remove("d-none");
+      mockRequest();
     } else {
       fineData.classList.add("d-none");
     }
   });
 
+  codeInput.addEventListener("focus", (event) => {
+    codeInput.classList.remove("is-invalid");
+    codeError.classList.add("d-none");
+    errorSummary.classList.add("d-none");
+  });
+
+  dateInput.addEventListener("focus", (event) => {
+    dateInput.classList.remove("is-invalid");
+    dateError.classList.add("d-none");
+    errorSummary.classList.add("d-none");
+  });
+
   dateInput.addEventListener("change", (event) => {
     const value = event.target.value;
-    console.log(value);
+
+    const today = new Date();
+    const fineDate = new Date(value);
+
+    const diffTime = Math.abs(today - fineDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
     if (value.length === 10) {
-      fineAmount.innerHTML = "38,42 €";
+      if (diffDays >= 6) {
+        fineAmount.innerHTML = "54,88 €";
+        fineInfo.innerHTML = `
+            Stai pagando <strong>entro ${diffDays} giorni</strong> dalla ricezione dell'avviso.`;
+      } else {
+        fineAmount.innerHTML = "38,42 €";
+        fineInfo.innerHTML = `
+          Stai pagando <strong>entro ${diffDays} giorni</strong> dalla ricezione dell'avviso.
+          L'importo da pagare è stato <strong>ridotto del 30%</strong>
+        `;
+      }
       fineInfo.classList.remove("d-none");
-      forwardButton.disabled = false;
-      forwardButton.classList.remove("disabled");
     } else {
       fineAmount.innerHTML = "--,-- €";
       fineInfo.classList.add("d-none");
-      forwardButton.disabled = true;
-      forwardButton.classList.add("disabled");
     }
   });
-
-  forwardButton.addEventListener("click", (event) => {
-    window.location.href = window.location.href.replace("specific", "payment");
-  });
+  // TODO: set state in localStorage
 });

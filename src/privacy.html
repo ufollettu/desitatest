@@ -510,7 +510,7 @@
 
             <div class="form-check mt-md-40">
               <div
-                class="checkbox-body mt-4 mb-3 mb-lg-40 d-flex align-items-center"
+                class="checkbox-body mt-4 mb-3 mb-lg-40 d-flex align-items-center flex-column"
               >
                 <input
                   type="checkbox"
@@ -521,13 +521,18 @@
                 <label class="title-small-semi-bold pt-1" for="privacy"
                   >Ho letto e compreso l’informativa sulla privacy</label
                 >
+                <div
+                  class="form-feedback just-validate-error-label d-none"
+                  id="privacy-error"
+                >
+                  Questo campo è richiesto
+                </div>
               </div>
             </div>
             <button
               type="button"
-              class="btn btn-primary mobile-full mb-2 mb-md-5 disabled"
+              class="btn btn-primary mobile-full mb-2 mb-md-5"
               id="forward-button"
-              disabled
             >
               <span class="">Avanti</span>
             </button>
