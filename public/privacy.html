@@ -509,9 +509,7 @@
             </span>
 
             <div class="form-check mt-md-40">
-              <div
-                class="checkbox-body mt-4 mb-3 mb-lg-40 d-flex align-items-center"
-              >
+              <div class="checkbox-body mt-4 mb-3 mb-lg-40 d-flex flex-column">
                 <input
                   type="checkbox"
                   id="privacy"
@@ -521,13 +519,18 @@
                 <label class="title-small-semi-bold pt-1" for="privacy"
                   >Ho letto e compreso l’informativa sulla privacy</label
                 >
+                <div
+                  class="form-feedback just-validate-error-label d-none"
+                  id="privacy-error"
+                >
+                  Questo campo è richiesto
+                </div>
               </div>
             </div>
             <button
               type="button"
-              class="btn btn-primary mobile-full mb-2 mb-md-5 disabled"
+              class="btn btn-primary mobile-full mb-2 mb-md-5"
               id="forward-button"
-              disabled
             >
               <span class="">Avanti</span>
             </button>
@@ -982,6 +985,6 @@
     </script>
     <script src="assets/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js"></script>
     <script src="assets/script/scripts.js"></script>
-    <script src="assets/script/pages/privacy.js"></script>
+    <script type="module" src="assets/script/pages/privacy.js"></script>
   </body>
 </html>
