@@ -621,7 +621,8 @@
                                 Codice avviso
                               </div>
                               <div class="border-light">
-                                <p class="data-text">1234 5678 9012 3456 78</p>
+                                <p class="data-text" id="fine-code"></p>
+                                <!-- 1234 5678 9012 3456 78 -->
                               </div>
                             </div>
                             <div class="single-line-info border-light">
@@ -629,7 +630,9 @@
                                 Ente creditore
                               </div>
                               <div class="border-light">
-                                <p class="data-text">Comune di Reggio Emilia</p>
+                                <p class="data-text" id="fine-creditor-name">
+                                  Comune di Reggio Emilia
+                                </p>
                               </div>
                             </div>
                             <div class="single-line-info border-light">
@@ -637,7 +640,9 @@
                                 Codice fiscale ente creditore
                               </div>
                               <div class="border-light">
-                                <p class="data-text">00154902351</p>
+                                <p class="data-text" id="fine-creditor-cf">
+                                  00154902351
+                                </p>
                               </div>
                             </div>
                             <div class="single-line-info border-light">
@@ -645,7 +650,9 @@
                                 Targa veicolo
                               </div>
                               <div class="border-light">
-                                <p class="data-text">CK 345 HB</p>
+                                <p class="data-text" id="fine-license-plate">
+                                  CK 345 HB
+                                </p>
                               </div>
                             </div>
                             <div class="single-line-info border-light">
@@ -653,7 +660,9 @@
                                 Data rilevazione
                               </div>
                               <div class="border-light">
-                                <p class="data-text">16/08/2022</p>
+                                <p class="data-text" id="fine-detection-date">
+                                  16/08/2022
+                                </p>
                               </div>
                             </div>
                             <div class="single-line-info border-light">
@@ -661,15 +670,22 @@
                                 Importo entro 60 gg
                               </div>
                               <div class="border-light">
-                                <p class="data-text">41,00 €</p>
+                                <p class="data-text" id="fine-amount-60">
+                                  41,00 €
+                                </p>
                               </div>
                             </div>
                             <div class="single-line-info border-light">
                               <div class="text-paragraph-small">
-                                Spese notfica
+                                Spese notifica
                               </div>
                               <div class="border-light">
-                                <p class="data-text">13,88 €</p>
+                                <p
+                                  class="data-text"
+                                  id="fine-notification-fees"
+                                >
+                                  13,88 €
+                                </p>
                               </div>
                             </div>
                             <div class="single-line-info border-light">
@@ -677,7 +693,9 @@
                                 Spese procedura
                               </div>
                               <div class="border-light">
-                                <p class="data-text">0,00 €</p>
+                                <p class="data-text" id="fine-procedure-costs">
+                                  0,00 €
+                                </p>
                               </div>
                             </div>
                             <div class="single-line-info border-light">
@@ -685,7 +703,9 @@
                                 Importo totale entro 60 gg
                               </div>
                               <div class="border-light">
-                                <p class="data-text">54,88 €</p>
+                                <p class="data-text" id="fine-total-amount">
+                                  54,88 €
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -1349,6 +1369,6 @@
     </script>
     <script src="assets/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js"></script>
     <script src="assets/script/scripts.js"></script>
-    <script src="assets/script/pages/specific.js"></script>
+    <script type="module" src="assets/script/pages/specific.js"></script>
   </body>
 </html>

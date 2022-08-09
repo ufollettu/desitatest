@@ -668,7 +668,7 @@
                           <div class="single-line-info border-light">
                             <div class="text-paragraph-small">Pagamento</div>
                             <div class="border-light">
-                              <p class="data-text">
+                              <p class="data-text" id="payment-info">
                                 Pagamento in misura ridotta, perché il pagamento
                                 avviene dopo il 5° giorno dalla notifica.
                               </p>
@@ -679,7 +679,9 @@
                               Importo dovuto
                             </div>
                             <div class="border-light">
-                              <p class="data-text">38,42 €</p>
+                              <p class="data-text" id="payment-amount">
+                                38,42 €
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -1249,6 +1251,6 @@
     </script>
     <script src="assets/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js"></script>
     <script src="assets/script/scripts.js"></script>
-    <script src="assets/script/pages/payment.js"></script>
+    <script type="module" src="assets/script/pages/payment.js"></script>
   </body>
 </html>

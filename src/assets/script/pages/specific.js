@@ -1,9 +1,18 @@
+import { store } from "./store";
+
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("specific data page loaded");
 
+  store.set("code", store.get("code") || "");
+  store.set("date", store.get("date") || "");
+  store.set("amount", store.get("amount") || "--,-- €");
+
+  const fineListElements = {
+    code: document.getElementById("fine-code"),
+  };
+
   const codeInput = document.getElementById("code");
   const codeError = document.getElementById("code-error");
-
   const dateInput = document.getElementById("date-1");
   const dateError = document.getElementById("date-error");
 
@@ -17,6 +26,47 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const errorSummaryLink = document.getElementById("error-summary-link");
 
   const spinner = document.getElementById("spinner");
+
+  const localCode = store.get("code");
+  const localDate = store.get("date");
+  const localAmount = store.get("amount");
+
+  if (localCode) {
+    codeInput.value = localCode;
+    codeInput.focus();
+    spinner.classList.add("d-none");
+    fineData.classList.remove("d-none");
+    fineListElements.code.innerHTML = localCode
+      .replace(/[^\dA-Z]/g, "")
+      .replace(/(.{4})/g, "$1 ")
+      .trim();
+  }
+
+  if (localDate) {
+    dateInput.value = localDate;
+  }
+
+  if (localAmount) {
+    const today = new Date();
+    const fineDate = new Date(localDate);
+
+    const diffTime = Math.abs(today - fineDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    fineAmount.innerHTML = localAmount;
+    if (diffDays >= 6) {
+      fineAmount.innerHTML = localAmount;
+      fineInfo.innerHTML = `
+          Stai pagando <strong>entro ${diffDays} giorni</strong> dalla ricezione dell'avviso.`;
+    } else {
+      fineAmount.innerHTML = localAmount;
+      fineInfo.innerHTML = `
+        Stai pagando <strong>entro ${diffDays} giorni</strong> dalla ricezione dell'avviso.
+        L'importo da pagare è stato <strong>ridotto del 30%</strong>
+      `;
+    }
+    fineInfo.classList.remove("d-none");
+  }
 
   const mockRequest = () => {
     spinner.classList.remove("d-none");
@@ -70,6 +120,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
   codeInput.addEventListener("keyup", (event) => {
     const value = event.target.value;
     if (value.length === 18) {
+      store.set("code", value);
+      fineListElements.code.innerHTML = value
+        .replace(/[^\dA-Z]/g, "")
+        .replace(/(.{4})/g, "$1 ")
+        .trim();
       mockRequest();
     } else {
       fineData.classList.add("d-none");
@@ -98,11 +153,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     if (value.length === 10) {
+      store.set("date", value);
       if (diffDays >= 6) {
+        store.set("amount", "54,88 €");
         fineAmount.innerHTML = "54,88 €";
         fineInfo.innerHTML = `
             Stai pagando <strong>entro ${diffDays} giorni</strong> dalla ricezione dell'avviso.`;
       } else {
+        store.set("amount", "38,42 €");
         fineAmount.innerHTML = "38,42 €";
         fineInfo.innerHTML = `
           Stai pagando <strong>entro ${diffDays} giorni</strong> dalla ricezione dell'avviso.
