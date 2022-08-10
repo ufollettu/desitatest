@@ -4,10 +4,10 @@
 set -e
 
 # build
-# npm run build
+npm run build
 
 # navigate into the build output directory
-cd public
+cd dist
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
@@ -20,7 +20,7 @@ git commit -m 'deploy'
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
+# if you are deploying to https://ufollettu.github.io/destitatest
 git push -f git@github.com:ufollettu/desitatest.git main:gh-pages
 
 cd -
