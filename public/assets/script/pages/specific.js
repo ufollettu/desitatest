@@ -1,5 +1,3 @@
-import { store } from "./store";
-
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("specific data page loaded");
 
@@ -102,13 +100,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
       errorSummary.classList.remove("d-none");
     }
 
-    if (isEmptyDate) {
+    if (!isEmptyCode && isEmptyDate && isLengthCode) {
       dateInput.classList.add("is-invalid");
       dateError.classList.remove("d-none");
       errorSummaryLink.innerHTML = "Data di ricevuta avviso";
       errorSummaryLink.href = "#date-1";
       errorSummary.classList.remove("d-none");
     }
+
     if (!isEmptyCode && isLengthCode && !isEmptyDate) {
       window.location.href = window.location.href.replace(
         "specific",

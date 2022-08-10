@@ -4,9 +4,7 @@
   "keywords": [],
   "scripts": {
     "zip": "rm -f dist.zip && jszip src -o dist.zip",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite"
   },
   "author": "",
   "license": "MIT",

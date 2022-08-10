@@ -1,7 +1,7 @@
-import { store } from "./store";
-
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("privacy page loaded");
+  console.log(store);
+
   const privacyCheckbox = document.getElementById("privacy");
   const privacyError = document.getElementById("privacy-error");
   const forwardButton = document.getElementById("forward-button");

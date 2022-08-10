@@ -2,13 +2,17 @@
 
 ## Install Dependencies
 
-1. `npm install`
+run `npm install`
 
 ## Start dev server
 
-1. `npm run dev`
+run `npm run dev`
 
 ## Zip the pages
 
-1. `npm run zip`
-2. the dist.zip folder contains pages and assets files
+run `npm run zip`
+The dist.zip folder contains pages and assets files
+
+## Live Demo
+
+go to [this link](https://ufollettu.github.io/desitatest/public)

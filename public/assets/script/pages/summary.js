@@ -1,5 +1,3 @@
-import { store } from "./store";
-
 window.addEventListener("DOMContentLoaded", (event) => {
   const summaryDate = document.getElementById("summary-date");
   const summaryAmount = document.getElementById("summary-amount");

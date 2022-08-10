@@ -1,5 +1,3 @@
-import { store } from "./store";
-
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("payment data page loaded");
 
