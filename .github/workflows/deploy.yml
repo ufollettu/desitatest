@@ -5,27 +5,28 @@ name: Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Init new repo in wwwroot and commit generated files
-      run: |
-        cd public
-        git init
-        git checkout -b main
-        git add -A
-        git commit -m 'deploy'
-        git push -f git@github.com:ufollettu/ufollettu.github.io.git main
+      - uses: actions/checkout@v3
+      - name: Init new repo in wwwroot and commit generated files
+        run: |
+          cd public
+          git init
+          git checkout -b main
+          git add -A
+          git config --local user.email "ufollettu@gmail.com"
+          git config --local user.name "ufollettu"
+          git commit -m 'deploy'
+          git push -f git@github.com:ufollettu/ufollettu.github.io.git main
