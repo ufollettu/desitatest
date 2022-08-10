@@ -12,7 +12,3 @@ run `npm run dev`
 
 run `npm run zip`
 The dist.zip folder contains pages and assets files
-
-## Live Demo page
-
-go to [this link](https://ufollettu.github.io/desitatest/public)
