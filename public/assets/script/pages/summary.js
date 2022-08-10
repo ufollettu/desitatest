@@ -1,4 +1,4 @@
-import { store } from "./store";
+import { store } from "./store.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
   const summaryDate = document.getElementById("summary-date");
