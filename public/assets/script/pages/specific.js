@@ -1,5 +1,3 @@
-import { store } from "./store.js";
-
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("specific data page loaded");
 
