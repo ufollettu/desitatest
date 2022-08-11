@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const fineData = document.getElementById("fine-data");
   const fineAmount = document.getElementById("fine-amount");
   const fineInfo = document.getElementById("fine-info");
+  const fineDetectionDate = document.getElementById("fine-detection-date");
 
   const errorSummary = document.getElementById("error-summary");
   const errorSummaryLink = document.getElementById("error-summary-link");
@@ -28,6 +29,30 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const localCode = store.get("code");
   const localDate = store.get("date");
   const localAmount = store.get("amount");
+
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, "0");
+  }
+
+  function formatDate(date) {
+    return [
+      padTo2Digits(date.getDate()),
+      padTo2Digits(date.getMonth() + 1),
+      date.getFullYear(),
+    ].join("/");
+  }
+
+  const fiveDaysAgo = new Date();
+  fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 10);
+
+  if (fineDetectionDate) {
+    fineDetectionDate.innerHTML = formatDate(fiveDaysAgo);
+  }
+
+  if (dateInput) {
+    dateInput.setAttribute("min", fiveDaysAgo.toISOString().split("T")[0]);
+    dateInput.setAttribute("max", new Date().toISOString().split("T")[0]);
+  }
 
   if (localCode) {
     codeInput.value = localCode;

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "keywords": [],
   "scripts": {
-    "zip": "rm -f dist.zip && jszip src -o dist.zip",
+    "zip": "rm -f dist.zip && jszip public -o dist.zip",
     "dev": "vite"
   },
   "author": "",
