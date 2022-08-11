@@ -51,6 +51,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }
 
   confirmDataBtn.addEventListener("click", (event) => {
-    window.location.href = window.location.href.replace("payment", "summary");
+    window.location.href = window.location.href.replace(
+      "payment",
+      "pagamento-1"
+    );
   });
 });
