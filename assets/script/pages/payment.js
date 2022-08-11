@@ -7,8 +7,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   const paymentCode = document.getElementById("payment-code");
   const paymentInfo = document.getElementById("payment-info");
-  const paymentDate = document.getElementById("payment-date");
   const paymentAmount = document.getElementById("payment-amount");
+  const notificationDate = document.getElementById("notification-date");
+  const fineDetectionDate = document.getElementById("fine-detection-date");
 
   const confirmDataBtn = document.getElementById("confirm-data-btn");
 
@@ -31,8 +32,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
       .trim();
   }
 
+  const fiveDaysAgo = new Date();
+  fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 10);
+
+  if (fineDetectionDate) {
+    fineDetectionDate.innerHTML = formatDate(fiveDaysAgo);
+  }
+
   if (localDate) {
-    paymentDate.innerHTML = formatDate(new Date(localDate));
+    notificationDate.innerHTML = formatDate(new Date(localDate));
   }
 
   if (localAmount) {
