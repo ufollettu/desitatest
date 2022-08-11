@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }
 
   const fiveDaysAgo = new Date();
-  fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 10);
+  fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 60);
 
   if (fineDetectionDate) {
     fineDetectionDate.innerHTML = formatDate(fiveDaysAgo);
